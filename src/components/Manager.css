@@ -1,0 +1,36 @@
+
+  *{
+    margin:0;
+    padding:0;
+  }
+  .card{
+    width:20rem;
+  } 
+  .card-img-top{
+    height:23rem;
+  }
+  #mainCard{
+    width:70rem;
+  }
+  @media (max-width: 575.98px) { 
+    #mainCard{
+      width:19.5rem;
+    }
+    .card{
+      width:18rem;
+    }
+    .card-img-top{
+      height:20rem;
+    }
+   }
+   @media (min-width: 768px) and (max-width: 1199.98px) { 
+    #mainCard{
+      width:43rem;
+    }
+    .card{
+      width:19.3rem;
+    }
+    .card-img-top{
+      height:21rem;
+    }
+   }
