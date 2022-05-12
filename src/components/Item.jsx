@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import Item_card from "./Item_card";
 import { useSelector } from "react-redux";
 
 export default function Item() {
@@ -12,10 +11,7 @@ export default function Item() {
     prodImg: "",
     index: 0,
   });
-  let [arr, setArr] = useState([]);
-  // console.log(initialState);
   let initialState = useSelector((state) => state);
-  // console.log(initialState.userReducer.length);
 
   const handleOnChange = () => {
     setAddData({
@@ -26,11 +22,9 @@ export default function Item() {
     console.log(initialState);
   };
   let btnOnChange = () => {
-    // setAddData(
-    initialState.userReducer.splice(initialState.userReducer.index, 1);
-    // )
-    // dispatch({ type: "addProduct", payload: updateData});
-    console.log(initialState);
+    setAddData(
+      initialState.userReducer.splice(initialState.userReducer.index, 1)
+    );
   };
   return (
     <div>
@@ -112,9 +106,7 @@ export default function Item() {
                 type="file"
                 id="file"
                 onChange={(e) => {
-                  let df = new FormData();
-                  df = e.target.files[0];
-                  console.log(df);
+                  e.target.files[0];
                   setAddData({
                     ...addData,
                     prodImg: e.target.files[0],
@@ -133,7 +125,6 @@ export default function Item() {
               Add Product
             </button>
           </div>
-
 
           <div className="addCard mt-5">
             <div className="headCard py-2">
@@ -158,9 +149,9 @@ export default function Item() {
                       <div className="col-md-11">
                         <div className="card-body">
                           <div className="d-flex justify-content-between mx-5 ">
-                            <span className="h6 my-2">{user.prodName}</span>
-                            <span className="h6 my-2">{user.prodDes}</span>
-                            <span className="h6 my-2">{user.prodPrice}</span>
+                            <span className="h6 my-2 mx-3">{user.prodName}</span>
+                            <span className="h6 my-2 mx-3">{user.prodDes}</span>
+                            <span className="h6 my-2 mx-3">{user.prodPrice}</span>
                             <span className="">
                               <button
                                 type="button"
@@ -202,11 +193,6 @@ export default function Item() {
             #rowCard{
               width: 20rem;
             } 
-            .textBox{
-              width:10rem;
-              // display: inline-block;
-              // justify-content: start;
-            }  
           }
         `}
       </style>
